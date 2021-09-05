@@ -1,20 +1,23 @@
 import React from 'react';
 import Head from 'next/head';
 import { AppBar, Toolbar, Typography, Container } from '@material-ui/core';
+import useStyles from '../utils/styles';
+ 
 
 export default function Layout({ children }) {
-  return (
+  const classes = useStyles(); 
+    return (
     <div>
       <Head>
         <title>Next Buyhub</title>
       </Head>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.navbar}>
         <Toolbar>
           <Typography>Buyhub</Typography>
         </Toolbar>
-      </AppBar>
-      <Container>{children}</Container>
-      <footer>
+      </AppBar> 
+      <Container className={classes.main}>{children}</Container>
+      <footer className={classes.footer}>
         <Typography>All rights reserved. Next Buyhub.</Typography>
       </footer>
     </div>
