@@ -1,9 +1,22 @@
-import React from 'react'
+import React from 'react';
+import Head from 'next/head';
+import { AppBar, Toolbar, Typography, Container } from '@material-ui/core';
 
-export default function Layout() {
-    return (
-        <div>
-            
-        </div>
-    )
+export default function Layout({ children }) {
+  return (
+    <div>
+      <Head>
+        <title>Next Buyhub</title>
+      </Head>
+      <AppBar position="static">
+        <Toolbar>
+          <Typography>Buyhub</Typography>
+        </Toolbar>
+      </AppBar>
+      <Container>{children}</Container>
+      <footer>
+        <Typography>All rights reserved. Next Buyhub.</Typography>
+      </footer>
+    </div>
+  );
 }
